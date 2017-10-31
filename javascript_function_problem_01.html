@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">	
+	var A =[90,80,50,40,10];			
+	var B = [90,30,100,50,50];	
+	var C = [20,30,60,50,20];
+	var A_sum=0, B_sum=0, C_sum=0;
+	var A_max = 0, B_max=0, C_max=0;
+    	var A_min = A[0], B_min = B[0], C_min = C[0];
+	A.forEach(function(value){A_sum+=value;});
+	B.forEach(function(value){B_sum+=value;});
+	C.forEach(function(value){C_sum+=value;});
+	
+	var A_average = A_sum/5;
+	var B_average = B_sum/5;
+	var C_average = C_sum/5;
+	for(var i=0;i < 5;i++){
+		if(A_max < A[i])
+			A_max = A[i];
+	}
+	for(var i=0;i < 5;i++){
+		if(B_max < B[i])
+			B_max = B[i];
+	}
+	for(var i=0;i < 5;i++){
+		if(C_max < C[i])
+			C_max = C[i];
+	}
+	
+	for(var i=0;i < 5;i++){
+		if(A_min > A[i])
+			A_min = A[i];
+	}
+	for(var i=0;i < 5;i++){
+		if(B_min > B[i])
+			B_min = B[i];
+	}
+	for(var i=0;i < 5;i++){
+		if(C_min > C[i])
+			C_min = C[i];
+	}
+	
+	console.log('A 학생의 평균 점수는 ' + A_average + ' , 최고 점수는 ' + A_max + ' , 최하 점수는 ' + A_min + ' 입니다.');
+	console.log('B 학생의 평균 점수는 ' + B_average + ' , 최고 점수는 ' + B_max + ' , 최하 점수는 ' + B_min + ' 입니다.');
+	console.log('C 학생의 평균 점수는 ' + C_average + ' , 최고 점수는 ' + C_max + ' , 최하 점수는 ' + C_min + ' 입니다.');
+    </script>
+</head>
+<body>
+</body>
+</html>

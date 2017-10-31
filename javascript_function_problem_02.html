@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+    <script type="text/javascript">
+        var A_mid = 10;
+        var A_end = 8;
+        var B_mid = 1;
+        var B_end = 2;
+        var C_mid = 9;
+        var C_end = 5;
+		function fnc_1(a,b){
+			var result = "",tmp=10;
+			if(b>0){
+			tmp=20;
+			a=a+b;
+			}
+			for(var i = tmp-a;i < tmp;i++){
+				result += "*";
+			}
+			for(var i = 0;i < tmp-a;i++){
+				result += "_";
+			}
+			return result;
+		}
+		console.log("A : " + fnc_1(A_mid) + " + " + fnc_1(A_end)+" = "+fnc_1(A_mid,A_end));
+		console.log("B : " + fnc_1(B_mid) + " + " + fnc_1(B_end)+" = "+fnc_1(B_mid,B_end));
+		console.log("C : " + fnc_1(C_mid) + " + " + fnc_1(C_end)+" = "+fnc_1(C_mid,C_end));
+    </script>
+</head>
+<body>
+</body>
+</html>
