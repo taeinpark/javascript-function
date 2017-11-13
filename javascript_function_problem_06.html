@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function print_scores_chart() {
+			var result;
+			var min = 1;
+			var max = 0;
+			for(var i = 0; i < arguments.length; i++) {
+				if(arguments[i] < min) min = arguments[i];
+			}
+		  	for(var i = 0; i < 12; i++) {
+			  	result = '';
+			  	if(i == 0) result += '<pre>'; // 공백문자 입력 시 간격이 맞지않아서 추가했습니다.
+			  	for(var j = 0; j <= (arguments.length-1)*2; j++) {
+				  	if(i == 0 || i == 11) {
+					  	result += '-';
+				  	} else if(j%2 == 0) {
+					  	if(arguments[j/2] >= 11-i) {
+						 	result += '*';
+						  	if(max == 0) max = 1;
+					  	} else {
+						  	result += ' ';
+					  	}
+				  	} else {
+					  	result += ' ';
+				  	}
+			  	}
+			  	if(max == 1) {
+				  	result += ' <- max';
+				  	max = 2;				  				  
+			  	} else if(i == 11-min) result += ' <- min';
+			  	if(i == 11) document.write(result, '</pre>'); // 공백문자 입력 시 간격이 맞지않아서 추가했습니다.  			
+			  	else document.write(result, '<br>');
+		  	}
+	  	}
+      		print_scores_chart(1, 2, 3, 4, 5);
+      		print_scores_chart(10, 1, 10, 1, 5, 5);
+      		print_scores_chart(5, 2, 2, 9, 3, 5, 9);
+    	</script>
+</head>
+<body>
+</body>
+</html>
